@@ -1,0 +1,33 @@
+Original source location:
+https://github.com/amlweems/hexpand
+This version is ported to Windows.
+
+Version of OPENSSL used:
+OpenSLL 1.1.0e 16 Feb 2017
+The fallowing files should be present:
+libcryptoMD.dll
+libcryptoMDd.dll
+libsslMD.dll
+libsslMDd.dll
+These filess are present in SSL_DLLS.rar rar archive!
+
+I've used Visual Studio 2008 Command Prompt
+for compling source code with nmake.exe
+see Compile.bat
+
+Hexpand is a tool for automating hash length extension attacks. 
+
+## What's a length extension attack? ##
+
+Hash length extension attacks allow an attacker to construct the `H(secret|message|append)`
+given only `H(secret|message)` and the length of `secret|message`.
+The attack uses the output hash to reconstruct the internal state of the hash function.
+From there, it is trivial to feed the hash function the data to be appended and output the new hash.
+
+How this works?
+We continue hashing for we "left" by setting hash internal state:
+SHA512_CTX.h[] for SHA and MD5_CTX.a, MD5_CTX.b, MD5_CTX.c, MD5_CTX.d for MD5
+The data to be append is standard padding of the hash algorithms!
+Plus of course the message to be append!
+
+

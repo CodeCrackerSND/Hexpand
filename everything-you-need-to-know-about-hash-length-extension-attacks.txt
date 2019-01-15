@@ -1,0 +1,6 @@
+https://blog.skullsecurity.org/2012/everything-you-need-to-know-about-hash-length-extension-attacks
+
+http://extranet.cryptomathic.com/hashcalc/index
+
+https://codebeautify.org/string-hex-converter
+
